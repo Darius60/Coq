@@ -1,6 +1,4 @@
-Parameters p1 p2 p3 t1 t2 t3: 
-
-Prop.
+Parameters p1 p2 p3 t1 t2 t3: Prop.
 
 Definition v1 := (~p1 /\ ~t1).
 Definition v2 := (~p2 /\ ~t2).
@@ -20,7 +18,7 @@ Definition h2 := (p1 /\ t2 /\ v3) \/ (p1 /\ v2 /\ t3)
                 \/ (t1 /\ p2 /\ v3) \/ (t1 /\ v2 /\ p3)
                 \/ (v1 /\ p2 /\ t3) \/ (v1 /\ t2 /\ p3).
 
-Lemma epreuve_1_bis : h1 /\ h2 /\ k -> p1 /\ t2 /\ v3.
+Lemma epreuve_11 : h1 /\ h2 /\ k -> p1 /\ t2 /\ v3.
 
 Proof.
 unfold k, h1, h2.
@@ -86,3 +84,5 @@ destruct H7.
 assumption.
 elimtype False.
 auto.
+
+Qed.

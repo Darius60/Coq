@@ -6,9 +6,7 @@ Definition k := (aff1 /\ aff2) \/ (~aff1 /\ ~aff2).
 Definition h1 := ~(p1 /\ t1) /\ ~(p2 /\ t2).
 Definition h2 := (p1 \/ t1) /\ (p2 \/ t2).
 
-(* Require Export Classical. *)
-
-Lemma epreuve_1_bis : h1 /\ h2 /\ k -> t1 /\ p2.
+Lemma epreuve_2 : h1 /\ h2 /\ k -> t1 /\ p2.
 Proof.
 unfold k, h1, h2.
 unfold aff1, aff2.

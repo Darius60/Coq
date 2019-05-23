@@ -48,7 +48,9 @@ Definition h2 := (p1 /\ tv2 /\ tv3 /\ tv4 /\ tv5 /\ tv6 /\ tv7 /\ tv8 /\ tv9)
               \/ (tv1 /\ tv2 /\ tv3 /\ tv4 /\ tv5 /\ tv6 /\ tv7 /\ p8 /\ tv9)
               \/ (tv1 /\ tv2 /\ tv3 /\ tv4 /\ tv5 /\ tv6 /\ tv7 /\ tv8 /\ p9).
 
-Lemma epreuve_1_bis : h1 /\ h2 /\ k /\ t8 -> p7.
+Lemma epreuve_12 : h1 /\ h2 /\ k /\ t8 -> p7.
+
+Proof.
 unfold k, h1, h2.
 unfold aff9, aff6, aff3, aff5, aff4, aff1 , aff2, aff7, aff8.
 unfold tv1, tv2, tv3, tv4, tv5, tv6, tv7, tv8 , tv9.
@@ -384,3 +386,4 @@ split.
 assumption.
 assumption.
 
+Qed.

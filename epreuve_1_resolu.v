@@ -5,43 +5,33 @@ Definition aff2 := (p1 /\ t2) \/ (p2 /\ t1).
 Definition k := (aff1 /\ ~aff2) \/ (~aff1 /\ aff2).
 Definition h1 := ~(p1 /\ t1) /\ ~(p2 /\ t2).
 Definition h2 := (p1 \/ t1) /\ (p2 \/ t2).
-
-Require Export Classical.
  
-Lemma epreuve_1_bis : k -> t1 /\ p2.
+Lemma epreuve_1 : h1 /\ h2 /\ k -> t1 /\ p2.
 Proof.
-  unfold k.
+  unfold k, h1, h2.
   unfold aff1, aff2.
   intros.
-  elim H; intros; clear H.
-  elim H0; intros; clear H0.
+  destruct H.
+  destruct H.
+  destruct H0.
+  destruct H0.
+  destruct H2.
+  destruct H2.
+  destruct H2.
+  destruct H4.
+  
+  left.
+  split.
+  assumption.
+  assumption.
+
+  destruct H2.
+  destruct H4.  
   elimtype False.
   auto.
-  elim H0; intros; clear H0.
-  elim H1; intros; clear H1.
-  elimtype False.
-  auto.
-  elim H0; intros; clear H0.
+
+  destruct H4.
   split.
   assumption.
   assumption.
 Qed.
-
-Lemma epreuve_1_ter : k -> t1 /\ p2.
-Proof.
-  unfold k.
-  unfold aff1, aff2.
-  intros.
-  elim H; intros; clear H.
-  elim H0; intros; clear H0.
-  elimtype False.
-  apply H1.
-  left; assumption.
-  elim H0; intros; clear H0.
-  elim H1; intros; clear H1.
-  elimtype False.
-  auto.
-  elim H0; intros; clear H0.
-  split; assumption.
-Qed.
-

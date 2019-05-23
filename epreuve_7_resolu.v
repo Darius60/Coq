@@ -8,7 +8,7 @@ Definition k := ((p1 /\ aff1) \/ (t1 /\ ~aff1)) /\ ((p2 /\ ~aff2) \/ (t2 /\ aff2
 Definition h1 := ~(p1 /\ t1) /\ ~(p2 /\ t2).
 Definition h2 := (p1 \/ t1) /\ (p2 \/ t2).
 
-Lemma epreuve_1_bis : h1 /\ h2 /\ k -> p1 /\ t2.
+Lemma epreuve_7 : h1 /\ h2 /\ k -> p1 /\ t2.
 Proof.
 unfold k, h1, h2.
 unfold aff1, aff2.
@@ -45,3 +45,4 @@ destruct H7.
 elimtype False.
 apply H1.
 split; assumption.
+Qed.
